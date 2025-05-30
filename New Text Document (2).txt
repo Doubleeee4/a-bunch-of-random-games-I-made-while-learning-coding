@@ -74,6 +74,11 @@ def higherorlower():
         elif numberofguessing < guessofthynumber:
             print("Lower! Guess another number.")
         else:
+
+
+def verystrictpassword()
+    capitalletters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q',"R","S","T","U","V","W","X","Y","Z"]
+    input(str("Input your passord please"))
             print(f"Correct! My number that i was thinking about was {numberofguessing}. It took you {counterforhigherorlower} guesses.")
             if counterforhigherorlower <= 6:
                 print ("Its impressive how you got it in that little guesses!")
