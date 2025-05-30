@@ -81,9 +81,28 @@ def higherorlower():
 
 
 
-def verystrictpassword()
+def verystrictpassword():
     capitalletters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q',"R","S","T","U","V","W","X","Y","Z"]
+    symbols = ['.','/',';','[',']','<','>','?',':','|','{','}','-','=','_','+','*','&','^','%','$','#','@','`','~','!','\'',"\""]
     input(str("Input your passord please"))
+    while 1+1 == 2:
+        input(str("Input your passord please"))    
+        if len(passworde) > 9:
+            if capitalletters in passworde:
+                if 1 or 2 or 3 or 4 or 5 or 6 or 7 or 8 or 9 or 0 in passworde:
+                    if symbols in passworde:
+                        if random.randint(1,4) == 3:
+                            confirmpassworde = str(input("confirm your password by typing it again."))
+                            if passworde ==   confirmpassworde:
+                                print("Congratulations! It   took you x tries to sign up!")
+                                return passworde
+            else:
+                print("your password should include capital letters.")
+                
+                
+            
+            
+            tries += 1
 
 
 
