@@ -137,7 +137,7 @@ def blackjack():
             if choiceofdraw == "y":
                 playerscards.append(deal_card())
                 playercn = sum(playerscards)
-                if playercn <= 21:
+                if playercn >= 21:
                     print(f"Its a bust. You lost. You got a {playerscards[-1]}")
                     ask()
             if choiceofdraw == "n":
