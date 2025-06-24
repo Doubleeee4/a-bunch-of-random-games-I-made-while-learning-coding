@@ -94,15 +94,67 @@ def verystrictpassword():
                         if random.randint(1,4) == 3:
                             confirmpassworde = str(input("confirm your password by typing it again."))
                             if passworde ==   confirmpassworde:
-                                print("Congratulations! It   took you x tries to sign up!")
+                                print("Congratulations! It took you x tries to sign up!")
                                 return passworde
             else:
-                print("your password should include capital letters.")
+                print("your password should include capital letters.") # doesnt work
+def blackjack():
+    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+    import random
+    playercn = 0
+    dealercn = 0
+    cardrandom = 0
+    def deal_card():
+        cardrandom = cards[random.randint(0,12)]
+        return cardrandom
+    playerscards = [0]
+    dealerscards = [0]
+    choiceofdraw = "e"
+    choiceofexit = "y"
+    def ask():
+        print("do you want to continue playing?")
+        global choiceofexit
+        choiceofexit = input()
+
+    while choiceofexit == "y":
+        playerscards.clear()
+        dealerscards.clear()
+        playercn = 0
+        dealercn = 0
+        playerscards.append(deal_card())
+        playerscards.append(deal_card())
+        dealerscards.append(deal_card())
+        dealerscards.append(deal_card())
+        dealercn = sum(dealerscards)
+        playercn = sum(playerscards)
+        while dealercn < 17:
+            dealerscards.append(deal_card())
+            dealercn = sum(dealerscards)
+        while playercn <= 21 and dealercn <= 21:
+            print(f"Your cards: {playerscards}\nThe dealers cards: {dealerscards[0]} and an unknown card.")
+            print("Do you want to Draw another card? y/n.\n")
+            choiceofdraw = str(input(""))
+            if choiceofdraw == "y":
+                playerscards.append(deal_card())
+                playercn = sum(playerscards)
+                if playercn <= 21:
+                    print(f"Its a bust. You lost. You got a {playerscards[-1]}")
+                    ask()
+            if choiceofdraw == "n":
+                if playercn > dealercn:
+                    print(f"you won! \nYour cards were {playerscards} \n and the dealers cards were {dealerscards}")
+                    ask()
+                elif playercn == dealercn:
+                    print(f"Its a draw.\nYour cards were {playerscards} \n and the dealers cards were {dealerscards} ")
+                    ask()
+                else:
+                    print(f"you lost.\nYour cards were {playerscards} \nand the dealers cards were {dealerscards}")
+                    ask()
+
                 
                 
             
-            
-            tries += 1
+            # all of these may or may not work. idk check before using them
 
 
 
