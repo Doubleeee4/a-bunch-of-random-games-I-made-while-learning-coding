@@ -130,7 +130,7 @@ def blackjack():
         while dealercn < 17:
             dealerscards.append(deal_card())
             dealercn = sum(dealerscards)
-        while playercn <= 21 and dealercn <= 21:
+        while playercn <= 21 and dealercn <= 21 or choiceofexit == "n":
             print(f"Your cards: {playerscards}\nThe dealers cards: {dealerscards[0]} and an unknown card.")
             print("Do you want to Draw another card? y/n.\n")
             choiceofdraw = str(input(""))
